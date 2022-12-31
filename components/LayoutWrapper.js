@@ -28,19 +28,21 @@ const LayoutWrapper = ({ children }) => {
               </div>
             </Link>
           </div> */}
-          <div className="flex items-center text-base leading-5">
+          <div className="flex w-full flex-1 items-center justify-between text-base leading-5">
             <div className="hidden sm:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium text-gray-900 first:pl-0 dark:text-gray-100 sm:p-4"
                 >
                   {link.title}
                 </Link>
               ))}
             </div>
-            {/* <ThemeSwitch /> */}
+            <div>
+              <ThemeSwitch />
+            </div>
             <MobileNav />
           </div>
         </header>
