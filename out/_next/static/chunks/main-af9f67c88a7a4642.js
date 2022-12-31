@@ -940,7 +940,11 @@
             var r = t(ne ? oe : ae)
             ne ? (_.default.hydrate(r, e), (ne = !1)) : _.default.render(r, e)
           })(B, function (e) {
-            return h.default.createElement(pe, { callbacks: [e, t] }, p)
+            return h.default.createElement(
+              pe,
+              { callbacks: [e, t] },
+              h.default.createElement(h.default.StrictMode, null, p)
+            )
           }),
           f
         )
