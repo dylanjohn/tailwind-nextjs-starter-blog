@@ -301,142 +301,141 @@
         c.done ? t(o) : Promise.resolve(o).then(n, a)
       }
       var s = function (e) {
-        var t = e.title,
-          r = void 0 === t ? 'Subscribe to the newsletter' : t,
-          n = (0, l.useRef)(null),
-          c = (0, l.useState)(!1),
-          s = c[0],
-          u = c[1],
-          m = (0, l.useState)(''),
-          p = m[0],
-          h = m[1],
-          f = (0, l.useState)(!1),
-          g = f[0],
-          y = f[1],
-          v = (function () {
-            var e,
-              t =
-                ((e = a().mark(function e(t) {
-                  var r
-                  return a().wrap(function (e) {
-                    for (;;)
-                      switch ((e.prev = e.next)) {
-                        case 0:
-                          return (
-                            t.preventDefault(),
-                            (e.next = 3),
-                            fetch('/api/'.concat(o().newsletter.provider), {
-                              body: JSON.stringify({ email: n.current.value }),
-                              headers: { 'Content-Type': 'application/json' },
-                              method: 'POST',
-                            })
-                          )
-                        case 3:
-                          return (r = e.sent), (e.next = 6), r.json()
-                        case 6:
-                          if (!e.sent.error) {
-                            e.next = 11
-                            break
-                          }
-                          return (
-                            u(!0),
-                            h('Your e-mail address is invalid or you are already subscribed!'),
-                            e.abrupt('return')
-                          )
-                        case 11:
-                          ;(n.current.value = ''),
-                            u(!1),
-                            y(!0),
-                            h('Successfully! \ud83c\udf89 You are now subscribed.')
-                        case 15:
-                        case 'end':
-                          return e.stop()
+          var t = e.title,
+            r = void 0 === t ? 'Subscribe to the newsletter' : t,
+            n = (0, l.useRef)(null),
+            c = (0, l.useState)(!1),
+            s = c[0],
+            u = c[1],
+            m = (0, l.useState)(''),
+            p = m[0],
+            h = m[1],
+            f = (0, l.useState)(!1),
+            g = f[0],
+            y = f[1],
+            v = (function () {
+              var e,
+                t =
+                  ((e = a().mark(function e(t) {
+                    var r
+                    return a().wrap(function (e) {
+                      for (;;)
+                        switch ((e.prev = e.next)) {
+                          case 0:
+                            return (
+                              t.preventDefault(),
+                              (e.next = 3),
+                              fetch('/api/'.concat(o().newsletter.provider), {
+                                body: JSON.stringify({ email: n.current.value }),
+                                headers: { 'Content-Type': 'application/json' },
+                                method: 'POST',
+                              })
+                            )
+                          case 3:
+                            return (r = e.sent), (e.next = 6), r.json()
+                          case 6:
+                            if (!e.sent.error) {
+                              e.next = 11
+                              break
+                            }
+                            return (
+                              u(!0),
+                              h('Your e-mail address is invalid or you are already subscribed!'),
+                              e.abrupt('return')
+                            )
+                          case 11:
+                            ;(n.current.value = ''),
+                              u(!1),
+                              y(!0),
+                              h('Successfully! \ud83c\udf89 You are now subscribed.')
+                          case 15:
+                          case 'end':
+                            return e.stop()
+                        }
+                    }, e)
+                  })),
+                  function () {
+                    var t = this,
+                      r = arguments
+                    return new Promise(function (n, a) {
+                      var i = e.apply(t, r)
+                      function l(e) {
+                        d(i, n, a, l, c, 'next', e)
                       }
-                  }, e)
-                })),
-                function () {
-                  var t = this,
-                    r = arguments
-                  return new Promise(function (n, a) {
-                    var i = e.apply(t, r)
-                    function l(e) {
-                      d(i, n, a, l, c, 'next', e)
-                    }
-                    function c(e) {
-                      d(i, n, a, l, c, 'throw', e)
-                    }
-                    l(void 0)
+                      function c(e) {
+                        d(i, n, a, l, c, 'throw', e)
+                      }
+                      l(void 0)
+                    })
                   })
-                })
-            return function (e) {
-              return t.apply(this, arguments)
-            }
-          })()
-        return (0, i.BX)('div', {
-          children: [
-            (0, i.tZ)('div', {
-              className: 'pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100',
-              children: r,
-            }),
-            (0, i.BX)('form', {
-              className: 'flex flex-col sm:flex-row',
-              onSubmit: v,
-              children: [
-                (0, i.BX)('div', {
-                  children: [
-                    (0, i.tZ)('label', {
-                      className: 'sr-only',
-                      htmlFor: 'email-input',
-                      children: 'Email address',
-                    }),
-                    (0, i.tZ)('input', {
-                      autoComplete: 'email',
-                      className:
-                        'w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black',
-                      id: 'email-input',
-                      name: 'email',
-                      placeholder: g ? "You're subscribed !  \ud83c\udf89" : 'Enter your email',
-                      ref: n,
-                      required: !0,
-                      type: 'email',
-                      disabled: g,
-                    }),
-                  ],
-                }),
-                (0, i.tZ)('div', {
-                  className: 'mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3',
-                  children: (0, i.tZ)('button', {
-                    className:
-                      'w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 '.concat(
-                        g ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400',
-                        ' focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black'
-                      ),
-                    type: 'submit',
-                    disabled: g,
-                    children: g ? 'Thank you!' : 'Sign up',
-                  }),
-                }),
-              ],
-            }),
-            s &&
+              return function (e) {
+                return t.apply(this, arguments)
+              }
+            })()
+          return (0, i.BX)('div', {
+            children: [
               (0, i.tZ)('div', {
-                className: 'w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96',
-                children: p,
+                className: 'pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100',
+                children: r,
               }),
-          ],
-        })
-      }
-      t.Z = s
-      var u = function (e) {
-        var t = e.title
-        return (0, i.tZ)('div', {
-          className: 'flex items-center justify-center',
-          children: (0, i.tZ)('div', {
-            className: 'bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8',
-            children: (0, i.tZ)(s, { title: t }),
-          }),
-        })
-      }
+              (0, i.BX)('form', {
+                className: 'flex flex-col sm:flex-row',
+                onSubmit: v,
+                children: [
+                  (0, i.BX)('div', {
+                    children: [
+                      (0, i.tZ)('label', {
+                        className: 'sr-only',
+                        htmlFor: 'email-input',
+                        children: 'Email address',
+                      }),
+                      (0, i.tZ)('input', {
+                        autoComplete: 'email',
+                        className:
+                          'w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black',
+                        id: 'email-input',
+                        name: 'email',
+                        placeholder: g ? "You're subscribed !  \ud83c\udf89" : 'Enter your email',
+                        ref: n,
+                        required: !0,
+                        type: 'email',
+                        disabled: g,
+                      }),
+                    ],
+                  }),
+                  (0, i.tZ)('div', {
+                    className: 'mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3',
+                    children: (0, i.tZ)('button', {
+                      className:
+                        'w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 '.concat(
+                          g ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400',
+                          ' focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black'
+                        ),
+                      type: 'submit',
+                      disabled: g,
+                      children: g ? 'Thank you!' : 'Sign up',
+                    }),
+                  }),
+                ],
+              }),
+              s &&
+                (0, i.tZ)('div', {
+                  className: 'w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96',
+                  children: p,
+                }),
+            ],
+          })
+        },
+        u = function (e) {
+          var t = e.title
+          return (0, i.tZ)('div', {
+            className: 'flex items-center justify-center',
+            children: (0, i.tZ)('div', {
+              className: 'bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8',
+              children: (0, i.tZ)(s, { title: t }),
+            }),
+          })
+        }
     },
     920: function (e, t, r) {
       'use strict'

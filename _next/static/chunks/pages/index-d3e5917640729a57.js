@@ -2,9 +2,9 @@
   [405],
   {
     9671: function (u, D, F) {
-      const e = F(1701)
+      const t = F(1701)
       u.exports = r
-      const t = Object.hasOwnProperty
+      const e = Object.hasOwnProperty
       function r() {
         if (!(this instanceof r)) return new r()
         this.reset()
@@ -12,14 +12,14 @@
       function n(u, D) {
         return 'string' !== typeof u
           ? ''
-          : (D || (u = u.toLowerCase()), u.replace(e, '').replace(/ /g, '-'))
+          : (D || (u = u.toLowerCase()), u.replace(t, '').replace(/ /g, '-'))
       }
       ;(r.prototype.slug = function (u, D) {
         const F = this
-        let e = n(u, !0 === D)
-        const r = e
-        for (; t.call(F.occurrences, e); ) F.occurrences[r]++, (e = r + '-' + F.occurrences[r])
-        return (F.occurrences[e] = 0), e
+        let t = n(u, !0 === D)
+        const r = t
+        for (; e.call(F.occurrences, t); ) F.occurrences[r]++, (t = r + '-' + F.occurrences[r])
+        return (F.occurrences[t] = 0), t
       }),
         (r.prototype.reset = function () {
           this.occurrences = Object.create(null)
@@ -45,158 +45,157 @@
           return A
         },
       })
-      var e = F(4051),
-        t = F.n(e),
+      var t = F(4051),
+        e = F.n(t),
         r = F(7320),
         n = F(1720),
         a = F(1576),
         i = F.n(a)
-      function C(u, D, F, e, t, r, n) {
+      function C(u, D, F, t, e, r, n) {
         try {
           var a = u[r](n),
             i = a.value
         } catch (C) {
           return void F(C)
         }
-        a.done ? D(i) : Promise.resolve(i).then(e, t)
+        a.done ? D(i) : Promise.resolve(i).then(t, e)
       }
       var E = function (u) {
-        var D = u.title,
-          F = void 0 === D ? 'Subscribe to the newsletter' : D,
-          e = (0, n.useRef)(null),
-          a = (0, n.useState)(!1),
-          E = a[0],
-          A = a[1],
-          c = (0, n.useState)(''),
-          o = c[0],
-          l = c[1],
-          s = (0, n.useState)(!1),
-          B = s[0],
-          d = s[1],
-          m = (function () {
-            var u,
-              D =
-                ((u = t().mark(function u(D) {
-                  var F
-                  return t().wrap(function (u) {
-                    for (;;)
-                      switch ((u.prev = u.next)) {
-                        case 0:
-                          return (
-                            D.preventDefault(),
-                            (u.next = 3),
-                            fetch('/api/'.concat(i().newsletter.provider), {
-                              body: JSON.stringify({ email: e.current.value }),
-                              headers: { 'Content-Type': 'application/json' },
-                              method: 'POST',
-                            })
-                          )
-                        case 3:
-                          return (F = u.sent), (u.next = 6), F.json()
-                        case 6:
-                          if (!u.sent.error) {
-                            u.next = 11
-                            break
-                          }
-                          return (
-                            A(!0),
-                            l('Your e-mail address is invalid or you are already subscribed!'),
-                            u.abrupt('return')
-                          )
-                        case 11:
-                          ;(e.current.value = ''),
-                            A(!1),
-                            d(!0),
-                            l('Successfully! \ud83c\udf89 You are now subscribed.')
-                        case 15:
-                        case 'end':
-                          return u.stop()
+          var D = u.title,
+            F = void 0 === D ? 'Subscribe to the newsletter' : D,
+            t = (0, n.useRef)(null),
+            a = (0, n.useState)(!1),
+            E = a[0],
+            A = a[1],
+            c = (0, n.useState)(''),
+            o = c[0],
+            l = c[1],
+            s = (0, n.useState)(!1),
+            B = s[0],
+            d = s[1],
+            m = (function () {
+              var u,
+                D =
+                  ((u = e().mark(function u(D) {
+                    var F
+                    return e().wrap(function (u) {
+                      for (;;)
+                        switch ((u.prev = u.next)) {
+                          case 0:
+                            return (
+                              D.preventDefault(),
+                              (u.next = 3),
+                              fetch('/api/'.concat(i().newsletter.provider), {
+                                body: JSON.stringify({ email: t.current.value }),
+                                headers: { 'Content-Type': 'application/json' },
+                                method: 'POST',
+                              })
+                            )
+                          case 3:
+                            return (F = u.sent), (u.next = 6), F.json()
+                          case 6:
+                            if (!u.sent.error) {
+                              u.next = 11
+                              break
+                            }
+                            return (
+                              A(!0),
+                              l('Your e-mail address is invalid or you are already subscribed!'),
+                              u.abrupt('return')
+                            )
+                          case 11:
+                            ;(t.current.value = ''),
+                              A(!1),
+                              d(!0),
+                              l('Successfully! \ud83c\udf89 You are now subscribed.')
+                          case 15:
+                          case 'end':
+                            return u.stop()
+                        }
+                    }, u)
+                  })),
+                  function () {
+                    var D = this,
+                      F = arguments
+                    return new Promise(function (t, e) {
+                      var r = u.apply(D, F)
+                      function n(u) {
+                        C(r, t, e, n, a, 'next', u)
                       }
-                  }, u)
-                })),
-                function () {
-                  var D = this,
-                    F = arguments
-                  return new Promise(function (e, t) {
-                    var r = u.apply(D, F)
-                    function n(u) {
-                      C(r, e, t, n, a, 'next', u)
-                    }
-                    function a(u) {
-                      C(r, e, t, n, a, 'throw', u)
-                    }
-                    n(void 0)
+                      function a(u) {
+                        C(r, t, e, n, a, 'throw', u)
+                      }
+                      n(void 0)
+                    })
                   })
-                })
-            return function (u) {
-              return D.apply(this, arguments)
-            }
-          })()
-        return (0, r.BX)('div', {
-          children: [
-            (0, r.tZ)('div', {
-              className: 'pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100',
-              children: F,
-            }),
-            (0, r.BX)('form', {
-              className: 'flex flex-col sm:flex-row',
-              onSubmit: m,
-              children: [
-                (0, r.BX)('div', {
-                  children: [
-                    (0, r.tZ)('label', {
-                      className: 'sr-only',
-                      htmlFor: 'email-input',
-                      children: 'Email address',
-                    }),
-                    (0, r.tZ)('input', {
-                      autoComplete: 'email',
-                      className:
-                        'w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black',
-                      id: 'email-input',
-                      name: 'email',
-                      placeholder: B ? "You're subscribed !  \ud83c\udf89" : 'Enter your email',
-                      ref: e,
-                      required: !0,
-                      type: 'email',
-                      disabled: B,
-                    }),
-                  ],
-                }),
-                (0, r.tZ)('div', {
-                  className: 'mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3',
-                  children: (0, r.tZ)('button', {
-                    className:
-                      'w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 '.concat(
-                        B ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400',
-                        ' focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black'
-                      ),
-                    type: 'submit',
-                    disabled: B,
-                    children: B ? 'Thank you!' : 'Sign up',
-                  }),
-                }),
-              ],
-            }),
-            E &&
+              return function (u) {
+                return D.apply(this, arguments)
+              }
+            })()
+          return (0, r.BX)('div', {
+            children: [
               (0, r.tZ)('div', {
-                className: 'w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96',
-                children: o,
+                className: 'pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100',
+                children: F,
               }),
-          ],
-        })
-      }
-      D.Z = E
-      var A = function (u) {
-        var D = u.title
-        return (0, r.tZ)('div', {
-          className: 'flex items-center justify-center',
-          children: (0, r.tZ)('div', {
-            className: 'bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8',
-            children: (0, r.tZ)(E, { title: D }),
-          }),
-        })
-      }
+              (0, r.BX)('form', {
+                className: 'flex flex-col sm:flex-row',
+                onSubmit: m,
+                children: [
+                  (0, r.BX)('div', {
+                    children: [
+                      (0, r.tZ)('label', {
+                        className: 'sr-only',
+                        htmlFor: 'email-input',
+                        children: 'Email address',
+                      }),
+                      (0, r.tZ)('input', {
+                        autoComplete: 'email',
+                        className:
+                          'w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black',
+                        id: 'email-input',
+                        name: 'email',
+                        placeholder: B ? "You're subscribed !  \ud83c\udf89" : 'Enter your email',
+                        ref: t,
+                        required: !0,
+                        type: 'email',
+                        disabled: B,
+                      }),
+                    ],
+                  }),
+                  (0, r.tZ)('div', {
+                    className: 'mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3',
+                    children: (0, r.tZ)('button', {
+                      className:
+                        'w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 '.concat(
+                          B ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400',
+                          ' focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black'
+                        ),
+                      type: 'submit',
+                      disabled: B,
+                      children: B ? 'Thank you!' : 'Sign up',
+                    }),
+                  }),
+                ],
+              }),
+              E &&
+                (0, r.tZ)('div', {
+                  className: 'w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96',
+                  children: o,
+                }),
+            ],
+          })
+        },
+        A = function (u) {
+          var D = u.title
+          return (0, r.tZ)('div', {
+            className: 'flex items-center justify-center',
+            children: (0, r.tZ)('div', {
+              className: 'bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8',
+              children: (0, r.tZ)(E, { title: D }),
+            }),
+          })
+        }
     },
     9831: function (u, D, F) {
       'use strict'
@@ -211,8 +210,8 @@
           return A
         },
       })
-      var e = F(7320),
-        t = F(9008),
+      var t = F(7320),
+        e = F(9008),
         r = F(1163),
         n = F(1576),
         a = F.n(n),
@@ -224,31 +223,31 @@
             C = u.twImage,
             E = u.canonicalUrl,
             A = (0, r.useRouter)()
-          return (0, e.BX)(t.default, {
+          return (0, t.BX)(e.default, {
             children: [
-              (0, e.tZ)('title', { children: D }),
-              (0, e.tZ)('meta', { name: 'robots', content: 'follow, index' }),
-              (0, e.tZ)('meta', { name: 'description', content: F }),
-              (0, e.tZ)('meta', {
+              (0, t.tZ)('title', { children: D }),
+              (0, t.tZ)('meta', { name: 'robots', content: 'follow, index' }),
+              (0, t.tZ)('meta', { name: 'description', content: F }),
+              (0, t.tZ)('meta', {
                 property: 'og:url',
                 content: ''.concat(a().siteUrl).concat(A.asPath),
               }),
-              (0, e.tZ)('meta', { property: 'og:type', content: n }),
-              (0, e.tZ)('meta', { property: 'og:site_name', content: a().title }),
-              (0, e.tZ)('meta', { property: 'og:description', content: F }),
-              (0, e.tZ)('meta', { property: 'og:title', content: D }),
+              (0, t.tZ)('meta', { property: 'og:type', content: n }),
+              (0, t.tZ)('meta', { property: 'og:site_name', content: a().title }),
+              (0, t.tZ)('meta', { property: 'og:description', content: F }),
+              (0, t.tZ)('meta', { property: 'og:title', content: D }),
               'Array' === i.constructor.name
                 ? i.map(function (u) {
                     var D = u.url
-                    return (0, e.tZ)('meta', { property: 'og:image', content: D }, D)
+                    return (0, t.tZ)('meta', { property: 'og:image', content: D }, D)
                   })
-                : (0, e.tZ)('meta', { property: 'og:image', content: i }, i),
-              (0, e.tZ)('meta', { name: 'twitter:card', content: 'summary_large_image' }),
-              (0, e.tZ)('meta', { name: 'twitter:site', content: a().twitter }),
-              (0, e.tZ)('meta', { name: 'twitter:title', content: D }),
-              (0, e.tZ)('meta', { name: 'twitter:description', content: F }),
-              (0, e.tZ)('meta', { name: 'twitter:image', content: C }),
-              (0, e.tZ)('link', {
+                : (0, t.tZ)('meta', { property: 'og:image', content: i }, i),
+              (0, t.tZ)('meta', { name: 'twitter:card', content: 'summary_large_image' }),
+              (0, t.tZ)('meta', { name: 'twitter:site', content: a().twitter }),
+              (0, t.tZ)('meta', { name: 'twitter:title', content: D }),
+              (0, t.tZ)('meta', { name: 'twitter:description', content: F }),
+              (0, t.tZ)('meta', { name: 'twitter:image', content: C }),
+              (0, t.tZ)('link', {
                 rel: 'canonical',
                 href: E || ''.concat(a().siteUrl).concat(A.asPath),
               }),
@@ -258,13 +257,13 @@
         C = function (u) {
           var D = u.title,
             F = u.description,
-            t = a().siteUrl + a().socialBanner,
+            e = a().siteUrl + a().socialBanner,
             r = a().siteUrl + a().socialBanner
-          return (0, e.tZ)(i, {
+          return (0, t.tZ)(i, {
             title: D,
             description: F,
             ogType: 'website',
-            ogImage: t,
+            ogImage: e,
             twImage: r,
           })
         },
@@ -274,11 +273,11 @@
             n = a().siteUrl + a().socialBanner,
             C = a().siteUrl + a().socialBanner,
             E = (0, r.useRouter)()
-          return (0, e.BX)(e.HY, {
+          return (0, t.BX)(t.HY, {
             children: [
-              (0, e.tZ)(i, { title: D, description: F, ogType: 'website', ogImage: n, twImage: C }),
-              (0, e.tZ)(t.default, {
-                children: (0, e.tZ)('link', {
+              (0, t.tZ)(i, { title: D, description: F, ogType: 'website', ogImage: n, twImage: C }),
+              (0, t.tZ)(e.default, {
+                children: (0, t.tZ)('link', {
                   rel: 'alternate',
                   type: 'application/rss+xml',
                   title: ''.concat(F, ' - RSS feed'),
@@ -326,9 +325,9 @@
               description: n,
             },
             p = d[0].url
-          return (0, e.BX)(e.HY, {
+          return (0, t.BX)(t.HY, {
             children: [
-              (0, e.tZ)(i, {
+              (0, t.tZ)(i, {
                 title: F,
                 description: n,
                 ogType: 'article',
@@ -336,11 +335,11 @@
                 twImage: p,
                 canonicalUrl: l,
               }),
-              (0, e.BX)(t.default, {
+              (0, t.BX)(e.default, {
                 children: [
-                  C && (0, e.tZ)('meta', { property: 'article:published_time', content: s }),
-                  E && (0, e.tZ)('meta', { property: 'article:modified_time', content: B }),
-                  (0, e.tZ)('script', {
+                  C && (0, t.tZ)('meta', { property: 'article:published_time', content: s }),
+                  E && (0, t.tZ)('meta', { property: 'article:modified_time', content: B }),
+                  (0, t.tZ)('script', {
                     type: 'application/ld+json',
                     dangerouslySetInnerHTML: { __html: JSON.stringify(m, null, 2) },
                   }),
@@ -352,14 +351,14 @@
     },
     9019: function (u, D, F) {
       'use strict'
-      var e = F(7320),
-        t = F(1664),
+      var t = F(7320),
+        e = F(1664),
         r = F(4871)
       D.Z = function (u) {
         var D = u.text
-        return (0, e.tZ)(t.default, {
+        return (0, t.tZ)(e.default, {
           href: '/tags/'.concat((0, r.Z)(D)),
-          children: (0, e.tZ)('a', {
+          children: (0, t.tZ)('a', {
             className:
               'mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400',
             children: D.split(' ').join('-'),
@@ -369,10 +368,10 @@
     },
     6232: function (u, D, F) {
       'use strict'
-      var e = F(1576),
-        t = F.n(e)
+      var t = F(1576),
+        e = F.n(t)
       D.Z = function (u) {
-        return new Date(u).toLocaleDateString(t().locale, {
+        return new Date(u).toLocaleDateString(e().locale, {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
@@ -381,9 +380,9 @@
     },
     4871: function (u, D, F) {
       'use strict'
-      var e = F(9671)
+      var t = F(9671)
       D.Z = function (u) {
-        return (0, e.slug)(u)
+        return (0, t.slug)(u)
       }
     },
     4369: function (u, D, F) {
@@ -391,45 +390,43 @@
       F.r(D),
         F.d(D, {
           __N_SSG: function () {
-            return A
+            return E
           },
           default: function () {
-            return c
+            return A
           },
         })
-      var e = F(7320),
-        t = F(7233),
+      var t = F(7320),
+        e = F(7233),
         r = F(9831),
         n = F(9019),
         a = F(1576),
         i = F.n(a),
         C = F(6232),
-        E = F(7726),
-        A = !0
-      function c(u) {
+        E = (F(7726), !0)
+      function A(u) {
         var D = u.posts
-        return (0, e.BX)(e.HY, {
+        return (0, t.BX)(t.HY, {
           children: [
-            (0, e.tZ)(r.TQ, { title: i().title, description: i().description }),
-            (0, e.BX)('div', {
+            (0, t.tZ)(r.TQ, { title: i().title, description: i().description }),
+            (0, t.BX)('div', {
               className: 'divide-y divide-gray-200 dark:divide-gray-700',
               children: [
-                (0, e.BX)('div', {
-                  className: 'space-y-2 pt-6 pb-8 md:space-y-5',
+                (0, t.BX)('div', {
+                  className: 'space-y-2 py-8',
                   children: [
-                    (0, e.tZ)('h1', {
+                    (0, t.tZ)('h2', {
                       className:
-                        'text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14',
-                      children: 'Latest',
+                        'text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl',
+                      children: 'Dylan Prehn',
                     }),
-                    (0, e.tZ)('p', {
-                      className: 'text-lg leading-7 text-gray-500 dark:text-gray-400',
+                    (0, t.tZ)('p', {
+                      className: 'text-lg leading-10 text-gray-500 dark:text-gray-400',
                       children: i().description,
                     }),
                   ],
                 }),
-                (0, e.BX)('ul', {
-                  className: 'divide-y divide-gray-200 dark:divide-gray-700',
+                (0, t.BX)('ul', {
                   children: [
                     !D.length && 'No posts found.',
                     D.slice(0, 5).map(function (u) {
@@ -438,66 +435,66 @@
                         r = u.title,
                         a = u.summary,
                         i = u.tags
-                      return (0, e.tZ)(
+                      return (0, t.tZ)(
                         'li',
                         {
                           className: 'py-12',
-                          children: (0, e.tZ)('article', {
-                            children: (0, e.BX)('div', {
+                          children: (0, t.tZ)('article', {
+                            children: (0, t.BX)('div', {
                               className:
                                 'space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0',
                               children: [
-                                (0, e.BX)('dl', {
+                                (0, t.BX)('dl', {
                                   children: [
-                                    (0, e.tZ)('dt', {
+                                    (0, t.tZ)('dt', {
                                       className: 'sr-only',
                                       children: 'Published on',
                                     }),
-                                    (0, e.tZ)('dd', {
+                                    (0, t.tZ)('dd', {
                                       className:
                                         'text-base font-medium leading-6 text-gray-500 dark:text-gray-400',
-                                      children: (0, e.tZ)('time', {
+                                      children: (0, t.tZ)('time', {
                                         dateTime: F,
                                         children: (0, C.Z)(F),
                                       }),
                                     }),
                                   ],
                                 }),
-                                (0, e.BX)('div', {
+                                (0, t.BX)('div', {
                                   className: 'space-y-5 xl:col-span-3',
                                   children: [
-                                    (0, e.BX)('div', {
+                                    (0, t.BX)('div', {
                                       className: 'space-y-6',
                                       children: [
-                                        (0, e.BX)('div', {
+                                        (0, t.BX)('div', {
                                           children: [
-                                            (0, e.tZ)('h2', {
+                                            (0, t.tZ)('h2', {
                                               className:
-                                                'text-2xl font-bold leading-8 tracking-tight',
-                                              children: (0, e.tZ)(t.Z, {
+                                                'font-bold leading-8 tracking-tight md:text-3xl',
+                                              children: (0, t.tZ)(e.Z, {
                                                 href: '/blog/'.concat(D),
                                                 className: 'text-gray-900 dark:text-gray-100',
                                                 children: r,
                                               }),
                                             }),
-                                            (0, e.tZ)('div', {
+                                            (0, t.tZ)('div', {
                                               className: 'flex flex-wrap',
                                               children: i.map(function (u) {
-                                                return (0, e.tZ)(n.Z, { text: u }, u)
+                                                return (0, t.tZ)(n.Z, { text: u }, u)
                                               }),
                                             }),
                                           ],
                                         }),
-                                        (0, e.tZ)('div', {
+                                        (0, t.tZ)('div', {
                                           className:
                                             'prose max-w-none text-gray-500 dark:text-gray-400',
                                           children: a,
                                         }),
                                       ],
                                     }),
-                                    (0, e.tZ)('div', {
+                                    (0, t.tZ)('div', {
                                       className: 'text-base font-medium leading-6',
-                                      children: (0, e.tZ)(t.Z, {
+                                      children: (0, t.tZ)(e.Z, {
                                         href: '/blog/'.concat(D),
                                         className:
                                           'text-primary-500 hover:text-primary-600 dark:hover:text-primary-400',
@@ -519,19 +516,14 @@
               ],
             }),
             D.length > 5 &&
-              (0, e.tZ)('div', {
+              (0, t.tZ)('div', {
                 className: 'flex justify-end text-base font-medium leading-6',
-                children: (0, e.tZ)(t.Z, {
+                children: (0, t.tZ)(e.Z, {
                   href: '/blog',
                   className: 'text-primary-500 hover:text-primary-600 dark:hover:text-primary-400',
                   'aria-label': 'all posts',
                   children: 'All Posts \u2192',
                 }),
-              }),
-            '' !== i().newsletter.provider &&
-              (0, e.tZ)('div', {
-                className: 'flex items-center justify-center pt-4',
-                children: (0, e.tZ)(E.Z, {}),
               }),
           ],
         })
