@@ -52,6 +52,14 @@ const securityHeaders = [
   },
 ]
 
+// GitHub
+//
+// assetPrefix: '.',
+// images: {
+//   loader: 'akamai',
+//   path: '/',
+// },
+
 module.exports = withBundleAnalyzer({
   basePath: '/tailwind-nextjs-starter-blog',
   reactStrictMode: true,
